@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-toolbar color="primary">
+    <ion-buttons left style="display: inline-block;">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="texto_centrado" style="display: inline-block; width: 78%; text-align: center">Inicio</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content padding>
+
+  <ion-searchbar (ionChange)="buscar($event)" placeholder="Busqueda por id, precio"></ion-searchbar>
+
+
+  <ion-grid *ngFor="let booking of bookings | filter: searchText">
+    <ion-card>
+
+      <ion-card-content>
+
+        <p>
+          <b>BookingId:</b> {{ booking.bookingId }}
+        </p>
+        <p>
+          <b>Cliente:</b> {{ booking.tutenUserClient.firstName }} {{ booking.tutenUserClient.lastName }}
+        </p>
+        <p>
+          <b>Fecha de Creación:</b> {{ booking.bookingTime | date }}
+        </p>
+        <p>
+          <b>Dirección:</b> {{ booking.locationId.streetAddress }}
+        </p>
+        <p>
+          <b>Precio:</b> {{ booking.bookingPrice | currency }}
+        </p>
+
+
+      </ion-card-content>
+
+    </ion-card>
+  </ion-grid>
+
+
+</ion-content>

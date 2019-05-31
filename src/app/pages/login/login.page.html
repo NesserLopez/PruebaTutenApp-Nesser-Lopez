@@ -1,0 +1,55 @@
+<ion-content padding class="app-login">
+  <ion-row class="logo-row">
+      <ion-col width-67>
+          <img src="assets/imgs/logo.png" class="logo" height="100%" width="200" style="width: 100%;height: 45%;" />
+          <div class="login-box">
+              <ion-row class="row_panel">
+                  <ion-col>
+                      <ion-list inset>
+                          <ion-item class="panel_input">
+                              <ion-icon ios="ios-person" md="md-person"></ion-icon>
+                              <ion-input placeholder="Usuario" class="text-color-place" [(ngModel)]="user">
+                              </ion-input>
+                          </ion-item>
+
+                          <ion-item class="panel_input">
+                              <ion-icon name="key"></ion-icon>
+                              <ion-input type="password" placeholder="Contraseña" class="text-color-place"
+                                  [(ngModel)]="password"></ion-input>
+                          </ion-item>
+
+                      </ion-list>
+                  </ion-col>
+              </ion-row>
+              
+              <ion-buttons expand="full" size="large" block style="width: 100%; height: 55px;">
+                  <ion-button (click)="login()"  shape="round" fill="outline" ion-button block class="submit-btn" color="primary" size="large"
+                      style="width: 100%;height: 100%;"> 
+                      <ion-icon name="finger-print"></ion-icon>
+                      <ion-label>Iniciar sesión</ion-label>
+                  </ion-button>
+              </ion-buttons>
+
+          </div>
+      </ion-col>
+  </ion-row>
+
+</ion-content> 
+
+<div *ngIf=" validateLogin " style="width: 80%;
+min-height: 118px;
+background: white;
+position: fixed;
+top: 33%;
+z-index: 10000;
+border-radius: 10px;
+left: 10%;
+border: 1px solid #ccc;
+background-color: white;
+-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 3px 5px 0px rgba(0,0,0)">
+  <div style="min-height: 37px;text-align: center;border-bottom: 1px solid #ccc;padding-top: 5px;">Iniciando sesión
+  </div>
+  <div style="height: 37px;height: auto;text-align: center;padding-top: 20px;">Espere un momento ...</div>
+</div>
